@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>REANE | Beauty & Commercial Model</title>
+
+  <meta
+    name="description"
+    content="Reane is a Nigerian beauty and commercial model and beauty content creator based in Ilorin, Nigeria."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: #f7f4ef;
+      color: #171513;
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================
+       VARIABLES
+    ========================= */
+
+    :root {
+      --cream: #f7f4ef;
+      --paper: #fcfaf6;
+      --black: #171513;
+      --muted: #716b63;
+      --line: #ded8cf;
+      --accent: #8a7058;
+      --serif: "Cormorant Garamond", serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: .95;
+      font-weight: 500;
+      letter-spacing: -2px;
+    }
+
+    .section-intro {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .line {
+      height: 1px;
+      background: var(--line);
+      width: 100%;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: .3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(247, 244, 239, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 31px;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: .3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-book {
+      border: 1px solid var(--black);
+      padding: 11px 17px;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 82px;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      background: var(--paper);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px 8% 70px max(5vw, 30px);
+    }
+
+    .hero-small {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(85px, 12vw, 180px);
+      line-height: .75;
+      font-weight: 500;
+      letter-spacing: -7px;
+      margin-bottom: 30px;
+    }
+
+    .hero-role {
+      font-family: var(--serif);
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 24px;
+      border: 1px solid var(--black);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: .3s;
+    }
+
+    .btn.dark {
+      background: var(--black);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      height: calc(100vh - 82px);
+      min-height: 650px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      background: var(--black);
+      color: white;
+    }
+
+    .intro-content {
+      max-width: 920px;
+    }
+
+    .intro h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 30px;
+    }
+
+    .intro p {
+      color: #c8c2ba;
+      max-width: 680px;
+      font-size: 15px;
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .portfolio-item {
+      overflow: hidden;
+      background: #eae5dd;
+    }
+
+    .portfolio-item img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.035);
+    }
+
+    .portfolio-label {
+      padding: 15px 4px 4px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .portfolio-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 45px;
+    }
+
+    .category {
+      border: 1px solid var(--line);
+      padding: 9px 14px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       MODEL PROFILE
+    ========================= */
+
+    .profile {
+      background: var(--paper);
+    }
+
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .profile-table {
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .profile-row span:first-child {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 10px;
+    }
+
+    .profile-row span:last-child {
+      text-align: right;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
+    }
+
+    .about-copy p {
+      margin-bottom: 22px;
+      font-size: 15px;
+      color: #4e4943;
+    }
+
+    .about-location {
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: var(--paper);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 55px;
+      gap: 30px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service {
+      padding: 28px;
+      min-height: 145px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-number {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    .service h3 {
+      font-family: var(--serif);
+      font-size: 29px;
+      font-weight: 500;
+      margin: 22px 0 7px;
+    }
+
+    .service p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       MOTION
+    ========================= */
+
+    .motion {
+      background: var(--black);
+      color: white;
+    }
+
+    .motion .eyebrow,
+    .motion .section-intro {
+      color: #aaa39b;
+    }
+
+    .motion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .motion-item video {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #0d0d0d;
+    }
+
+    .motion-caption {
+      padding-top: 12px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #aaa39b;
+    }
+
+    /* =========================
+       COLLABORATIONS
+    ========================= */
+
+    .collaborations {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .collaboration-box {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .collaboration-box p {
+      color: var(--muted);
+      margin: 25px auto 35px;
+      max-width: 550px;
+    }
+
+    .collaboration-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .collaboration-tags span {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       EDITORIAL / FEATURES
+    ========================= */
+
+    .coming-soon {
+      padding: 75px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .coming-grid p {
+      color: var(--muted);
+      max-width: 500px;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================= */
+
+    .testimonials {
+      background: var(--paper);
+    }
+
+    .testimonial {
+      max-width: 800px;
+      margin: 50px auto 0;
+      text-align: center;
+    }
+
+    .quote-mark {
+      font-family: var(--serif);
+      font-size: 80px;
+      line-height: .5;
+    }
+
+    .testimonial p {
+      font-family: var(--serif);
+      font-size: 33px;
+      line-height: 1.2;
+      margin: 35px 0 20px;
+    }
+
+    .testimonial small {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       WORK WITH ME
+    ========================= */
+
+    .work {
+      background: #e9e3da;
+    }
+
+    .work-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+    }
+
+    .work-text p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 25px 0 35px;
+    }
+
+    .contact-details {
+      border-top: 1px solid #ccc3b8;
+    }
+
+    .contact-row {
+      padding: 18px 0;
+      border-bottom: 1px solid #ccc3b8;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .contact-row span:first-child {
+      color: var(--muted);
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    /* =========================
+       BOOKING FORM
+    ========================= */
+
+    .booking {
+      background: var(--black);
+      color: white;
+    }
+
+    .booking-intro {
+      max-width: 650px;
+      margin-bottom: 50px;
+    }
+
+    .booking-intro .eyebrow {
+      color: #aaa39b;
+    }
+
+    .booking-intro p {
+      color: #aaa39b;
+      margin-top: 20px;
+    }
+
+    form {
+      max-width: 850px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #aaa39b;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #44413e;
+      background: #201f1d;
+      color: white;
+      padding: 15px;
+      outline: none;
+      font-family: var(--sans);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #aaa39b;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      border: 1px solid white;
+      background: white;
+      color: var(--black);
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--black);
+      color: white;
+      border-top: 1px solid #33302d;
+      padding: 35px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 20px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .copyright {
+      color: #77716b;
+      font-size: 10px;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      section {
+        padding: 80px 0;
+      }
+
+      .nav {
+        height: 72px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        padding: 25px 5%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-book {
+        padding: 0;
+        border: 0;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        min-height: auto;
+      }
+
+      .hero-image {
+        height: 72vh;
+        min-height: 520px;
+      }
+
+      .hero-copy {
+        padding: 65px 5% 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(75px, 25vw, 130px);
+        letter-spacing: -5px;
+      }
+
+      .hero-role {
+        font-size: 24px;
+      }
+
+      .portfolio-header,
+      .services-header,
+      .motion-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-layout,
+      .about-layout,
+      .work-layout,
+      .coming-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .services-grid,
+      .motion-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial p {
+        font-size: 26px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .container {
+        width: 90%;
+      }
+
+      .hero-image {
+        height: 65vh;
+        min-height: 450px;
+      }
+
+      .hero h1 {
+        font-size: 82px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header id="header">
+    <div class="container nav">
+
+      <a href="#home" class="logo">REANE</a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#profile">Profile</a>
+        <a href="#services">Services</a>
+        <a href="#motion">Motion</a>
+        <a href="#work">Work With Me</a>
+        <a href="#booking" class="nav-book">Book Reane</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HOME
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-copy">
+
+        <div class="hero-small">
+          Nigerian Beauty & Commercial Model
+        </div>
+
+        <h1>REANE</h1>
+
+        <div class="hero-role">
+          Beauty & Commercial Model
+        </div>
+
+        <div class="hero-tagline">
+          Beauty. Culture. Elegance. Power.
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn dark">
+            View Portfolio
+          </a>
+
+          <a href="#booking" class="btn">
+            Book Reane
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="hero.jpg"
+          alt="Reane - Nigerian beauty and commercial model"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="intro">
+
+      <div class="container">
+
+        <div class="intro-content reveal">
+
+          <div class="eyebrow">
+            Model · Creator · Storyteller
+          </div>
+
+          <h2>
+            Beauty, culture and visual storytelling brought to life.
+          </h2>
+
+          <p>
+            Reane is a Nigerian beauty and commercial model and beauty
+            content creator available for campaigns, brand shoots,
+            UGC, creative collaborations and commercial projects.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
+
+    <section class="portfolio" id="portfolio">
+
+      <div class="container">
+
+        <div class="portfolio-header reveal">
+
+          <div>
+            <div class="eyebrow">Selected Work</div>
+
+            <h2 class="section-title">
+              Portfolio
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            A curated selection of beauty, fashion, bridal,
+            lifestyle and commercial work.
+          </p>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+          <div class="portfolio-item reveal">
+
+            <img
+              src="model-01.jpg"
+              alt="Reane modeling portfolio"
+              loading="lazy"
+            >
+
+            <div class="portfolio-label">
+              Beauty / Fashion
+            </div>
+
+          </div>
+
+
+          <div class="portfolio-item reveal">
+
+            <img
+              src="model-02.jpg"
+              alt="Reane modeling portfolio"
+              loading="lazy"
+            >
+
+            <div class="portfolio-label">
+              Lifestyle / Commercial
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="portfolio-categories reveal">
+
+          <span class="category">Beauty</span>
+          <span class="category">Fashion</span>
+          <span class="category">Bridal</span>
+          <span class="category">Lifestyle</span>
+          <span class="category">Commercial</span>
+          <span class="category">Editorial</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MODEL PROFILE
+    ========================== -->
+
+    <section class="profile" id="profile">
+
+      <div class="container">
+
+        <div class="profile-layout">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              Professional Details
+            </div>
+
+            <h2 class="section-title">
+              Model<br>Profile
+            </h2>
+
+          </div>
+
+
+          <div class="profile-table reveal">
+
+            <div class="profile-row">
+              <span>Height</span>
+              <span>5'2"</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Clothing Size</span>
+              <span>10</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Shoe Size</span>
+              <span>37 / 38</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Hair</span>
+              <span>Black</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Eyes</span>
+              <span>Brown</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Location</span>
+              <span>Ilorin, Nigeria</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Travel</span>
+              <span>Available</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Languages</span>
+              <span>English / Yoruba</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Specialties</span>
+              <span>Beauty / Fashion / Bridal / Lifestyle / Commercial</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+      <div class="container">
+
+        <div class="about-layout">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              Get To Know Me
+            </div>
+
+            <h2 class="section-title">
+              About<br>Me
+            </h2>
+
+            <div class="about-location">
+              Based in Ilorin, Nigeria · Available to Travel
+            </div>
+
+          </div>
+
+
+          <div class="about-copy reveal">
+
+            <p>
+              I am a Nigerian beauty and commercial model, with
+              passion for beauty, fashion, culture, and visual
+              storytelling. I specialize in beauty, fashion,
+              bridal, lifestyle, and commercial modeling, bringing
+              elegance, confidence, and versatility to every
+              project I take on.
+            </p>
+
+            <p>
+              As a model and beauty content creator, I enjoy
+              bringing creative concepts to life while creating
+              visuals that connect brands with their audience.
+              My work spans skincare, hair, lashes, nails,
+              fashion, bridal, and lifestyle, allowing me to work
+              across different aesthetics and creative directions.
+            </p>
+
+            <p>
+              I am passionate about building meaningful
+              collaborations with brands, photographers,
+              creatives, and businesses that value strong visual
+              identity and authentic storytelling. I approach every
+              project with professionalism, attention to detail,
+              and a commitment to delivering imagery that
+              represents both the creative vision and the brand.
+            </p>
+
+            <p>
+              Available for modeling, commercial campaigns,
+              brand shoots, UGC, and creative collaborations
+              across Nigeria.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services" id="services">
+
+      <div class="container">
+
+        <div class="services-header reveal">
+
+          <div>
+            <div class="eyebrow">
+              Available For
+            </div>
+
+            <h2 class="section-title">
+              Services
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            Available for brands, businesses, photographers,
+            creatives and campaigns looking for a versatile
+            model and content creator.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <div class="service reveal">
+            <div class="service-number">01</div>
+            <h3>Beauty & Skincare</h3>
+            <p>Beauty campaigns, skincare products and close-up beauty content.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">02</div>
+            <h3>Hair & Wigs</h3>
+            <p>Hair, wig, styling and beauty brand campaigns.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">03</div>
+            <h3>Lashes & Nails</h3>
+            <p>Beauty detail work for lash, nail and cosmetic brands.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">04</div>
+            <h3>Fashion</h3>
+            <p>Fashion campaigns, lookbooks, product shoots and creative concepts.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">05</div>
+            <h3>Bridal</h3>
+            <p>Bridal campaigns, beauty campaigns and wedding-focused content.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">06</div>
+            <h3>Commercial</h3>
+            <p>Commercial campaigns, product modeling and advertising content.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">07</div>
+            <h3>UGC & Branded Content</h3>
+            <p>Authentic visual content designed to connect brands with their audience.</p>
+          </div>
+
+          <div class="service reveal">
+            <div class="service-number">08</div>
+            <h3>Editorial & Creative</h3>
+            <p>Creative collaborations, editorial concepts and visual storytelling.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOTION
+    ========================== -->
+
+    <section class="motion" id="motion">
+
+      <div class="container">
+
+        <div class="motion-header reveal">
+
+          <div>
+            <div class="eyebrow">
+              See Me In Motion
+            </div>
+
+            <h2 class="section-title">
+              Motion
+            </h2>
+          </div>
+
+          <p class="section-intro">
+            Modeling is more than a still image. Explore Reane's
+            movement, expressions, posing and on-camera presence.
+          </p>
+
+        </div>
+
+
+        <div class="motion-grid">
+
+          <div class="reveal">
+            <video
+              src="video-01.mp4"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="motion-caption">
+              Motion / Beauty
+            </div>
+          </div>
+
+
+          <div class="reveal">
+            <video
+              src="video-02.mp4"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="motion-caption">
+              Motion / Fashion
+            </div>
+          </div>
+
+
+          <div class="reveal">
+            <video
+              src="video-03.mp4"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="motion-caption">
+              Motion / Commercial
+            </div>
+          </div>
+
+
+          <div class="reveal">
+            <video
+              src="video-04.mp4"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="motion-caption">
+              Motion / Creative
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COLLABORATIONS
+    ========================== -->
+
+    <section class="collaborations">
+
+      <div class="container">
+
+        <div class="collaboration-box reveal">
+
+          <div class="eyebrow">
+            Selected Collaborations
+          </div>
+
+          <h2 class="section-title">
+            Let's Create
+          </h2>
+
+          <p>
+            Open to meaningful collaborations with brands,
+            photographers, creatives and businesses that value
+            strong visual identity and authentic storytelling.
+          </p>
+
+          <div class="collaboration-tags">
+
+            <span>Beauty</span>
+            <span>Hair</span>
+            <span>Nails</span>
+            <span>Bridal</span>
+            <span>Fashion</span>
+            <span>Lifestyle</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         VIDEO EDITING / FUTURE WORK
+    ========================== -->
+
+    <section class="coming-soon">
+
+      <div class="container">
+
+        <div class="coming-grid">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              Creative Work
+            </div>
+
+            <h2 class="section-title">
+              Video<br>Editing
+            </h2>
+
+          </div>
+
+          <div class="reveal">
+
+            <p>
+              A dedicated video editing portfolio will be added
+              soon, showcasing selected editing projects and
+              visual storytelling work.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+
+    <section class="testimonials">
+
+      <div class="container">
+
+        <div class="eyebrow" style="text-align:center;">
+          Client Experience
+        </div>
+
+        <h2 class="section-title" style="text-align:center;">
+          Testimonials
+        </h2>
+
+        <div class="testimonial reveal">
+
+          <div class="quote-mark">
+            “
+          </div>
+
+          <p>
+            Client testimonials will be featured here as
+            collaborations and campaigns grow.
+          </p>
+
+          <small>
+            More coming soon
+          </small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WORK WITH ME
+    ========================== -->
+
+    <section class="work" id="work">
+
+      <div class="container">
+
+        <div class="work-layout">
+
+          <div class="work-text reveal">
+
+            <div class="eyebrow">
+              Work With Me
+            </div>
+
+            <h2 class="section-title">
+              Let's Work<br>Together
+            </h2>
+
+            <p>
+              Looking for a model for a beauty campaign,
+              commercial shoot, fashion project, UGC campaign
+              or creative collaboration?
+            </p>
+
+            <a href="#booking" class="btn dark">
+              Start A Booking
+            </a>
+
+          </div>
+
+
+          <div class="contact-details reveal">
+
+            <div class="contact-row">
+              <span>Email</span>
+              <a href="mailto:workwithreane@gmail.com">
+                workwithreane@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <span>Instagram</span>
+              <a
+                href="https://www.instagram.com/reane_creates/"
+                target="_blank"
+                rel="noopener"
+              >
+                @reane_creates
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <span>TikTok</span>
+              <span>@reane_creates</span>
+            </div>
+
+            <div class="contact-row">
+              <span>WhatsApp</span>
+              <a
+                href="https://wa.me/2349018929468"
+                target="_blank"
+                rel="noopener"
+              >
+                Message Reane
+              </a>
+            </div>
+
+            <div class="contact-row">
+              <span>Location</span>
+              <span>Ilorin, Nigeria</span>
+            </div>
+
+            <div class="contact-row">
+              <span>Travel</span>
+              <span>Available</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BOOKING
+    ========================== -->
+
+    <section class="booking" id="booking">
+
+      <div class="container">
+
+        <div class="booking-intro reveal">
+
+          <div class="eyebrow">
+            Book Reane
+          </div>
+
+          <h2 class="section-title">
+            Tell Me About<br>Your Project
+          </h2>
+
+          <p>
+            For bookings and collaborations, provide a few
+            details about your project below. This helps make
+            the booking process clearer and more efficient.
+          </p>
+
+        </div>
+
+
+        
+         <form id="bookingForm">
+        
+
+          <div class="form-grid">
+
+            <div class="form-field">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="Name"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="brand">Brand / Company</label>
+              <input
+                type="text"
+                id="brand"
+                name="Brand or Company"
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="Email"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="project">Project Type</label>
+
+              <select id="project" name="Project Type">
+
+                <option value="">
+                  Select project type
+                </option>
+
+                <option>Beauty / Skincare</option>
+                <option>Hair / Wig</option>
+                <option>Lashes / Nails</option>
+                <option>Fashion</option>
+                <option>Bridal</option>
+                <option>Commercial</option>
+                <option>UGC / Branded Content</option>
+                <option>Editorial</option>
+                <option>Creative Collaboration</option>
+                <option>Other</option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-field">
+              <label for="location">Shoot Location</label>
+              <input
+                type="text"
+                id="location"
+                name="Shoot Location"
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="date">Preferred Date</label>
+              <input
+                type="date"
+                id="date"
+                name="Preferred Date"
+              >
+            </div>
+
+
+            <div class="form-field full">
+              <label for="brief">
+                Project Brief
+              </label>
+
+              <textarea
+                id="brief"
+                name="Project Brief"
+                placeholder="Tell me about the concept, campaign, deliverables and anything else I should know."
+              ></textarea>
+
+            </div>
+
+
+            <div class="form-field full">
+
+              <label for="budget">
+                Budget / Rate
+              </label>
+
+              <input
+                type="text"
+                id="budget"
+                name="Budget or Rate"
+                placeholder="e.g. ₦150,000 or negotiable"
+              >
+
+            </div>
+
+          </div>
+
+
+          <button type="submit" class="submit-btn">
+            Send Booking Inquiry
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div class="footer-logo">
+        REANE
+      </div>
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.instagram.com/reane_creates/"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://wa.me/2349018929468"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> REANE
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* Header background */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* Mobile menu */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("active")
+          ? "×"
+          : "☰";
+    });
+
+
+    /* Close mobile menu after clicking */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+
+      });
+
+    });
+
+
+    /* Scroll reveal */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+/* Booking form → WhatsApp */
+
+const bookingForm = document.getElementById("bookingForm");
+
+if (bookingForm) {
+  bookingForm.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const brand = document.getElementById("brand").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const project = document.getElementById("project").value.trim();
+  const location = document.getElementById("location").value.trim();
+  const date = document.getElementById("date").value;
+  const brief = document.getElementById("brief").value.trim();
+  const budget = document.getElementById("budget").value.trim();
+
+  const message =
+`Hello Reane,
+
+I would like to make a booking inquiry.
+
+Name: ${name}
+Brand / Company: ${brand}
+Email: ${email}
+Project Type: ${project}
+Shoot Location: ${location}
+Preferred Date: ${date}
+Budget / Rate: ${budget}
+
+Project Brief:
+${brief}
+
+I found you through your website.`;
+
+  const whatsappURL =
+    "https://wa.me/2349018929468?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank", "noopener");
+
+  });
+}
+    
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

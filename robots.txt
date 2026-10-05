@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vtoby-tech.github.io/reane-website/sitemap.xml

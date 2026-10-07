@@ -360,6 +360,81 @@
       background: #eae5dd;
     }
 
+    .lightbox-image {
+      cursor: zoom-in;
+    }
+
+    /* Portfolio lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(15, 14, 13, .94);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .25s ease, visibility .25s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: min(92vw, 1200px);
+      max-height: 88vh;
+      object-fit: contain;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(0,0,0,.2);
+      color: white;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.82);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .booking-status {
+      min-height: 22px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .booking-status.success {
+      color: #4f654d;
+    }
+
+    .booking-status.error {
+      color: #8a3f3f;
+    }
+
     .portfolio-item img {
       aspect-ratio: 4 / 5;
       object-fit: cover;
@@ -1090,9 +1165,15 @@
           <div class="portfolio-item reveal">
 
             <img
+              class="lightbox-image"
               src="model-01.jpg"
+              data-lightbox-src="model-01.jpg"
+              tabindex="0"
+              role="button"
+              aria-label="Open Beauty / Fashion image"
               alt="Reane modeling portfolio"
               loading="lazy"
+              decoding="async"
             >
 
             <div class="portfolio-label">
@@ -1105,9 +1186,15 @@
           <div class="portfolio-item reveal">
 
             <img
+              class="lightbox-image"
               src="model-02.jpg"
+              data-lightbox-src="model-02.jpg"
+              tabindex="0"
+              role="button"
+              aria-label="Open Lifestyle / Commercial image"
               alt="Reane modeling portfolio"
               loading="lazy"
+              decoding="async"
             >
 
             <div class="portfolio-label">
@@ -1825,6 +1912,8 @@
             Send Booking Inquiry
           </button>
 
+          <p class="booking-status" id="bookingStatus" aria-live="polite"></p>
+
         </form>
 
       </div>
@@ -1832,6 +1921,17 @@
     </section>
 
   </main>
+
+
+  <!-- =========================
+       PORTFOLIO LIGHTBOX
+  ========================== -->
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">&times;</button>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
 
 
   <!-- =========================
@@ -1959,49 +2059,110 @@
 
 /* Booking form → WhatsApp */
 
-const bookingForm = document.getElementById("bookingForm");
+    const bookingForm = document.getElementById("bookingForm");
+    const bookingStatus = document.getElementById("bookingStatus");
 
-if (bookingForm) {
-  bookingForm.addEventListener("submit", function(event) {
+    if (bookingForm) {
+      bookingForm.addEventListener("submit", function(event) {
 
-  event.preventDefault();
+        event.preventDefault();
 
-  const name = document.getElementById("name").value.trim();
-  const brand = document.getElementById("brand").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const project = document.getElementById("project").value.trim();
-  const location = document.getElementById("location").value.trim();
-  const date = document.getElementById("date").value;
-  const brief = document.getElementById("brief").value.trim();
-  const budget = document.getElementById("budget").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const brand = document.getElementById("brand").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const project = document.getElementById("project").value.trim();
+        const location = document.getElementById("location").value.trim();
+        const date = document.getElementById("date").value;
+        const brief = document.getElementById("brief").value.trim();
+        const budget = document.getElementById("budget").value.trim();
 
-  const message =
+        const message =
 `Hello Reane,
 
-I would like to make a booking inquiry.
+I would like to make a booking inquiry through your website.
 
+Client Details
 Name: ${name}
-Brand / Company: ${brand}
+Brand / Company: ${brand || "Not provided"}
 Email: ${email}
-Project Type: ${project}
-Shoot Location: ${location}
-Preferred Date: ${date}
-Budget / Rate: ${budget}
+
+Project Details
+Project Type: ${project || "Not provided"}
+Shoot Location: ${location || "Not provided"}
+Preferred Date: ${date || "Not provided"}
+Budget / Rate: ${budget || "Not provided"}
 
 Project Brief:
-${brief}
+${brief || "Not provided"}
 
 I found you through your website.`;
 
-  const whatsappURL =
-    "https://wa.me/2349018929468?text=" +
-    encodeURIComponent(message);
+        const whatsappURL =
+          "https://wa.me/2349018929468?text=" +
+          encodeURIComponent(message);
 
-  window.open(whatsappURL, "_blank", "noopener");
+        const whatsappWindow = window.open(whatsappURL, "_blank", "noopener");
 
-  });
-}
-    
+        if (whatsappWindow) {
+          if (bookingStatus) {
+            bookingStatus.textContent = "Your inquiry is ready in WhatsApp. Review it and send when you're ready.";
+            bookingStatus.className = "booking-status success";
+          }
+        } else if (bookingStatus) {
+          bookingStatus.textContent = "WhatsApp could not be opened. Please allow pop-ups for this site and try again.";
+          bookingStatus.className = "booking-status error";
+        }
+
+      });
+    }
+
+
+    /* Portfolio lightbox */
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+      lightboxImage.src = "";
+      lightboxCaption.textContent = "";
+    }
+
+    document.querySelectorAll(".lightbox-image").forEach(image => {
+      const openImage = () => {
+        lightboxImage.src = image.dataset.lightboxSrc || image.src;
+        lightboxImage.alt = image.alt;
+        const label = image.closest(".portfolio-item")?.querySelector(".portfolio-label");
+        lightboxCaption.textContent = label ? label.textContent.trim() : "";
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
+
+      image.addEventListener("click", openImage);
+      image.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openImage();
+        }
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
+    });
+
     document.getElementById("year").textContent =
       new Date().getFullYear();
 

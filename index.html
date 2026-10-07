@@ -17,6 +17,11 @@
 
   <link rel="canonical" href="https://vtoby-tech.github.io/reane-website/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
+  <meta property="og:locale" content="en_NG">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1026">
+  <meta property="og:image:height" content="1280">
 
   <!-- Social sharing preview -->
   <meta property="og:type" content="website">
@@ -30,6 +35,7 @@
   <meta name="twitter:title" content="REANE | Beauty & Commercial Model">
   <meta name="twitter:description" content="Explore REANE's beauty and commercial modelling portfolio and make a booking inquiry.">
   <meta name="twitter:image" content="https://vtoby-tech.github.io/reane-website/hero.jpg">
+  <meta name="twitter:image:alt" content="REANE — Beauty & Commercial Model">
 
   <script type="application/ld+json">
   {
@@ -54,6 +60,28 @@
   >
 
   <style>
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -4rem;
+      z-index: 10000;
+      padding: .75rem 1rem;
+      background: #171513;
+      color: #fff;
+      text-decoration: none;
+      border-radius: .25rem;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    :focus-visible {
+      outline: 2px solid #171513;
+      outline-offset: 3px;
+    }
+
     /* =========================
        RESET
     ========================= */
@@ -418,6 +446,11 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       text-align: center;
+    }
+
+    .submit-btn:disabled {
+      opacity: .65;
+      cursor: wait;
     }
 
     .booking-status {
@@ -1030,6 +1063,8 @@
 
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- =========================
        NAVIGATION
   ========================== -->
@@ -1061,7 +1096,7 @@
        HOME
   ========================== -->
 
-  <main>
+  <main id="main-content">
 
     <section class="hero" id="home">
 
@@ -1165,7 +1200,7 @@
           <div class="portfolio-item reveal">
 
             <img
-              class="lightbox-image"
+              class="lightbox-image" loading="lazy" decoding="async"
               src="model-01.jpg"
               data-lightbox-src="model-01.jpg"
               tabindex="0"
@@ -1186,7 +1221,7 @@
           <div class="portfolio-item reveal">
 
             <img
-              class="lightbox-image"
+              class="lightbox-image" loading="lazy" decoding="async"
               src="model-02.jpg"
               data-lightbox-src="model-02.jpg"
               tabindex="0"
@@ -1908,7 +1943,7 @@
           </div>
 
 
-          <button type="submit" class="submit-btn">
+          <button type="submit" class="submit-btn" id="bookingSubmit">
             Send Booking Inquiry
           </button>
 
@@ -1929,7 +1964,7 @@
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
     <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">&times;</button>
-    <img id="lightboxImage" src="" alt="">
+    <img id="lightboxImage" src="" alt="" decoding="async">
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 
@@ -2061,11 +2096,14 @@
 
     const bookingForm = document.getElementById("bookingForm");
     const bookingStatus = document.getElementById("bookingStatus");
+    const bookingSubmit = document.getElementById("bookingSubmit");
 
     if (bookingForm) {
       bookingForm.addEventListener("submit", function(event) {
 
         event.preventDefault();
+
+        if (bookingSubmit) bookingSubmit.disabled = true;
 
         const name = document.getElementById("name").value.trim();
         const brand = document.getElementById("brand").value.trim();
@@ -2111,6 +2149,10 @@ I found you through your website.`;
         } else if (bookingStatus) {
           bookingStatus.textContent = "WhatsApp could not be opened. Please allow pop-ups for this site and try again.";
           bookingStatus.className = "booking-status error";
+        }
+
+        if (bookingSubmit) {
+          setTimeout(() => { bookingSubmit.disabled = false; }, 1200);
         }
 
       });
